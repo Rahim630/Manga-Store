@@ -401,6 +401,49 @@ hamburger.addEventListener('click', () => {
 
 ---
 
+## 🧾 Changelog (local edits)
+
+_Generated: 2025-12-03_
+
+The following entries summarize local changes detected in the working tree (files shown as modified or untracked). These changes were not part of the remote `origin/main` branch at the time of inspection.
+
+- ham.js (modified)
+  - Added search overlay UI controls and search behavior: open/close handlers, search input handling, clear button, search results rendering.
+  - Kept and improved the hamburger menu logic (toggles `active` classes and prevents body scroll when menu or overlay are open).
+
+- script.js (modified)
+  - Carousel/slider updates: refined drag start/stop logic, autoplay behavior and timeout handling, and infinite scroll wrapping.
+  - Minor renames and debug logging added for drag events.
+
+- main.js (modified)
+  - Adjustments to slide initialization and autoplay timing; small fixes related to duplicated slide cloning and timeout variable naming.
+
+- index.css (modified)
+  - New styles for search overlay and input UI (overlay layout, input styles, clear icons).
+  - Continued refinements to carousel and responsive rules (scroll snapping, transitions, button styles).
+
+- index.html (modified)
+  - Replaced static slide markup with dynamic placeholders (`<div class="slides-wrapper" id="slidesWrapper"> <!--dynamic--> </div>`) for JS-driven population.
+  - Added search overlay markup and wiring points (search icon, overlay container, inputs and results container).
+
+- dynamic.js (untracked — new)
+  - New dynamic DOM builder to populate the hero carousel and "Popular Today" wrappers from a JS data source.
+
+- item.js (untracked — new)
+  - Provides `MANGA_DATA` array (metadata for each manga cover, author, genre, description). Used by `dynamic.js` to render items.
+
+- .vscode/ (untracked)
+  - Local editor settings (workspace configuration). Typically safe to ignore in commits; consider adding to `.gitignore` if you don't want to push these.
+
+Notes & next steps:
+
+- If the changes above are intended to be included in the repository, commit the modified files (`ham.js`, `script.js`, `main.js`, `index.css`, `index.html`) and add the new files (`dynamic.js`, `item.js`).
+- If `.vscode/` contains personal/editor settings, add a `.gitignore` entry to avoid committing it.
+- I will commit only this `README.md` update now (so there's an on-repo record of the local changes). If you want, I can also stage and commit the other files and push everything in one go — but that requires a successful authenticated push.
+
+
+---
+
 ## 📱 Responsive Design
 
 ### Design Strategy
