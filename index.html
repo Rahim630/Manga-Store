@@ -24,6 +24,65 @@
             </div>
         </div>
         <div class="nav-actions">
+            <div class="search">
+                <div class="search-icon" id="search-icon" data-type="search-icon">
+                    <svg width="64px" height="64px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                        <g id="SVGRepo_iconCarrier">
+                            <path
+                                d="M15.7955 15.8111L21 21M18 10.5C18 14.6421 14.6421 18 10.5 18C6.35786 18 3 14.6421 3 10.5C3 6.35786 6.35786 3 10.5 3C14.6421 3 18 6.35786 18 10.5Z"
+                                stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                        </g>
+                    </svg>
+                </div>
+                <div class="search-overlay" id="search-overlay" data-type="search-overlay">
+                    <div class="input-text">
+                        <div class="inputs">
+                            <input type="text" placeholder="Search manga...">
+                            <svg width="64px" height="64px" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                                <g id="SVGRepo_iconCarrier">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M5.29289 5.29289C5.68342 4.90237 6.31658 4.90237 6.70711 5.29289L12 10.5858L17.2929 5.29289C17.6834 4.90237 18.3166 4.90237 18.7071 5.29289C19.0976 5.68342 19.0976 6.31658 18.7071 6.70711L13.4142 12L18.7071 17.2929C19.0976 17.6834 19.0976 18.3166 18.7071 18.7071C18.3166 19.0976 17.6834 19.0976 17.2929 18.7071L12 13.4142L6.70711 18.7071C6.31658 19.0976 5.68342 19.0976 5.29289 18.7071C4.90237 18.3166 4.90237 17.6834 5.29289 17.2929L10.5858 12L5.29289 6.70711C4.90237 6.31658 4.90237 5.68342 5.29289 5.29289Z"
+                                        fill="#ffffff"></path>
+                                </g>
+                            </svg>
+                        </div>
+                        <div class="all-svg">
+                            <div class="svg-1">
+                                <svg width="64px" height="64px" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                                    <g id="SVGRepo_iconCarrier">
+                                        <path
+                                            d="M15.7955 15.8111L21 21M18 10.5C18 14.6421 14.6421 18 10.5 18C6.35786 18 3 14.6421 3 10.5C3 6.35786 6.35786 3 10.5 3C14.6421 3 18 6.35786 18 10.5Z"
+                                            stroke="#ffffff" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round"></path>
+                                    </g>
+                                </svg>
+                            </div>
+                            <div class="svg-2">
+                                <svg width="64px" height="64px" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                                    <g id="SVGRepo_iconCarrier">
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M5.29289 5.29289C5.68342 4.90237 6.31658 4.90237 6.70711 5.29289L12 10.5858L17.2929 5.29289C17.6834 4.90237 18.3166 4.90237 18.7071 5.29289C19.0976 5.68342 19.0976 6.31658 18.7071 6.70711L13.4142 12L18.7071 17.2929C19.0976 17.6834 19.0976 18.3166 18.7071 18.7071C18.3166 19.0976 17.6834 19.0976 17.2929 18.7071L12 13.4142L6.70711 18.7071C6.31658 19.0976 5.68342 19.0976 5.29289 18.7071C4.90237 18.3166 4.90237 17.6834 5.29289 17.2929L10.5858 12L5.29289 6.70711C4.90237 6.31658 4.90237 5.68342 5.29289 5.29289Z"
+                                            fill="#ffffff"></path>
+                                    </g>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="search-results"></div>
+                    </div>
+                </div>
+            </div>
+
             <a href="discord"><svg width="64px" height="64px" viewBox="0 0 24 24" fill="none"
                     xmlns="http://www.w3.org/2000/svg">
                     <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
@@ -32,17 +91,6 @@
                         <path
                             d="M18.8944 4.34399C17.5184 3.71467 16.057 3.256 14.5317 3C14.3397 3.33067 14.1263 3.77866 13.977 4.13067C12.3546 3.89599 10.7439 3.89599 9.14394 4.13067C8.9946 3.77866 8.77059 3.33067 8.58925 3C7.05328 3.256 5.59194 3.71467 4.22555 4.34399C1.46289 8.41865 0.716219 12.3973 1.08955 16.3226C2.92421 17.6559 4.6949 18.4666 6.43463 19C6.86129 18.424 7.2453 17.8053 7.57597 17.1546C6.94663 16.92 6.3493 16.632 5.7733 16.2906C5.92263 16.184 6.07197 16.0667 6.21064 15.9493C9.68796 17.5387 13.4544 17.5387 16.889 15.9493C17.0383 16.0667 17.177 16.184 17.3263 16.2906C16.7503 16.632 16.153 16.92 15.5237 17.1546C15.8543 17.8053 16.2384 18.424 16.665 19C18.4037 18.4666 20.185 17.6559 22.0101 16.3226C22.4687 11.7787 21.2837 7.83202 18.8944 4.34399ZM8.05596 13.9013C7.01061 13.9013 6.15728 12.952 6.15728 11.7893C6.15728 10.6267 6.98928 9.67731 8.05596 9.67731C9.11194 9.67731 9.97591 10.6267 9.95457 11.7893C9.95457 12.952 9.11194 13.9013 8.05596 13.9013ZM15.065 13.9013C14.0197 13.9013 13.1653 12.952 13.1653 11.7893C13.1653 10.6267 13.9983 9.67731 15.065 9.67731C16.121 9.67731 16.985 10.6267 16.9637 11.7893C16.9637 12.952 16.1317 13.9013 15.065 13.9013Z"
                             fill="#ffffff"></path>
-                    </g>
-                </svg></a>
-
-            <a href="search.html"><svg width="64px" height="64px" viewBox="0 0 24 24" fill="none"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-                    <g id="SVGRepo_iconCarrier">
-                        <path
-                            d="M15.7955 15.8111L21 21M18 10.5C18 14.6421 14.6421 18 10.5 18C6.35786 18 3 14.6421 3 10.5C3 6.35786 6.35786 3 10.5 3C14.6421 3 18 6.35786 18 10.5Z"
-                            stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
                     </g>
                 </svg></a>
 
@@ -104,22 +152,8 @@
             <!-- <div class="slide-container"> -->
             <button class="slider-btn" id="prevBtn">&#10094;</button>
 
-            <div class="slides-wrapper">
-                <div class="slide-item">
-                    <img src="/image/Absolute Sword Sense.webp" alt="" draggable="false">
-                </div>
-                <div class="slide-item">
-                    <img src="/image/Demonic Master of Mount Kunlun.webp" alt="" draggable="false">
-                </div>
-                <div class="slide-item">
-                    <img src="/image/Doctor’s Rebirth.webp" alt="" draggable="false">
-                </div>
-                <div class="slide-item">
-                    <img src="/image/Father, Unrivaled.webp" alt="" draggable="false">
-                </div>
-                <div class="slide-item">
-                    <img src="/image/Fist Demon of Mount Hua.webp" alt="" draggable="false">
-                </div>
+            <div class="slides-wrapper" id="slidesWrapper">
+                <!--dynamic-->
             </div>
 
             <button class="slider-btn" id="nextBtn">&#10095;</button>
@@ -130,45 +164,13 @@
         <section class="popular-today">
             <h2>Popular Today</h2>
             <div class="popular-today-container">
-                <button class="sli-btn" id="prevPopularBtn">&#10094;</button>
+                <!-- <button class="sli-btn" id="prevPopularBtn">&#10094;</button> -->
+                <div class="wrp-group" id="popularTodayWrapper">
 
-                <div class="wrp-group">
-                    <div class="popular-today-wrapper">
-                        <div class="popular-today-item">
-                            <img src="/image/Heavenly Demon Reborn!.webp" alt="">
-                        </div>
-                        <div class="popular-today-item">
-                            <img src="/image/Heavenly Inquisition Sword.webp" alt="">
-                        </div>
-                        <div class="popular-today-item">
-                            <img src="/image/Murim Login.webp" alt="">
-                        </div>
-                        <div class="popular-today-item">
-                            <img src="/image/Murim RPG Simulation.webp" alt="">
-                        </div>
-                        <div class="popular-today-item">
-                            <img src="/image/Nano Machine.webp" alt="">
-                        </div>
-                    </div>
-                    <div aria-hidden class="popular-today-wrapper">
-                        <div class="popular-today-item">
-                            <img src="/image/Heavenly Demon Reborn!.webp" alt="">
-                        </div>
-                        <div class="popular-today-item">
-                            <img src="/image/Heavenly Inquisition Sword.webp" alt="">
-                        </div>
-                        <div class="popular-today-item">
-                            <img src="/image/Murim Login.webp" alt="">
-                        </div>
-                        <div class="popular-today-item">
-                            <img src="/image/Murim RPG Simulation.webp" alt="">
-                        </div>
-                        <div class="popular-today-item">
-                            <img src="/image/Nano Machine.webp" alt="">
-                        </div>
-                    </div>
+                    <!--dynamic-->
+                    
                 </div>
-                <button class="sli-btn" id="nextPopularBtn">&#10095;</button>
+                <!-- <button class="sli-btn" id="nextPopularBtn">&#10095;</button> -->
             </div>
         </section>
 
@@ -463,7 +465,9 @@
             </div>
         </section>
     </main>
-    <script src="script.js"></script>
+    <script src="item.js"></script>
+    <script src="dynamic.js"></script>
+    <script src="main.js"></script>
     <script src="ham.js"></script>
 </body>
 

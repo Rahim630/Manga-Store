@@ -80,7 +80,6 @@ nav {
     width: 0;
     border-radius: 5px;
     background-color: #fff;
-    /* white hover underline */
     transition: width 0.3s ease;
 }
 
@@ -88,13 +87,12 @@ nav {
     width: 95%;
 }
 
-/* Make HOME text white + bold */
+/* HOME special */
 .nav-link1 .home {
     color: #fff !important;
     font-weight: bold;
 }
 
-/* Fixed red underline ALWAYS visible */
 .nav-link1 .home::before {
     content: "";
     position: absolute;
@@ -103,16 +101,14 @@ nav {
     height: 4px;
     width: 90%;
     background-color: #ff0606;
-    /* red underline */
     border-radius: 3px;
 }
 
-/* Hover underline for Home should be white */
 .nav-link1 .home::after {
     background-color: #fff !important;
 }
 
-
+/* Right side  */
 .nav-actions {
     display: flex;
     gap: 8px;
@@ -134,8 +130,125 @@ nav {
 .nav-actions a svg {
     width: 25px;
     height: 25px;
-    vertical-align: middle;
 }
+
+.search {
+    padding: 12px 5px;
+}
+
+.search-icon {
+    cursor: pointer;
+}
+
+.search-icon svg {
+    width: 25px;
+    height: 25px;
+}
+
+/* -------------------- SEARCH OVERLAY -------------------- */
+
+.search-overlay {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: #00000070;
+    padding: 15px;
+    z-index: 999;
+    width: 100%;
+    height: 100%;
+}
+
+.search-overlay.active {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;   /* ✔ full screen center */
+}
+
+/* ------------ INPUT CONTAINER ------------ */
+
+.input-text {
+    width: 55%;
+    background-color: #b81313;
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    position: relative;
+    top: 55px;
+    padding: 20px;
+    gap: 15px;
+    border-radius: 12px;
+    height: 50%;
+}
+
+/* ------------ INPUT + CLEAR BUTTON ------------ */
+
+.inputs {
+    position: relative;
+    width: 70%;
+    display: flex;
+    align-items: center;
+}
+
+.inputs input {
+    width: 100%;
+    padding: 12px 15px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    background: #fff;
+    color: #000;
+}
+
+.inputs svg {
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    right: 10px;   /* ✔ move inside input */
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 50%;
+    background-color: #000;
+    color: #fff;
+}
+
+/* ------------ TWO BUTTONS BELOW INPUT ------------ */
+
+.all-svg {
+    display: flex;
+    gap: 10px;
+    justify-content: center;    /* ✔ center the two icons */
+    align-items: center;        /* ✔ vertical center */
+    margin: 5px 0 0 0;
+}
+
+.all-svg svg {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    color: #fff;
+    padding: 5px;
+    background-color: #000;
+    border-radius: 50%;
+}
+.all-svg .svg-2 svg {
+    background-color: #64d664;
+}
+
+/* ------------ SEARCH-RUSELT BELOW INPUT ------------ */
+
+.search-results {
+    margin-top: 20px;
+    color: white;
+    font-size: 1rem;
+}
+.result-item {
+    padding: 10px;
+    background: #111;
+    border-radius: 8px;
+}
+
 
 .hamburger {
     width: 35px;
@@ -199,6 +312,7 @@ nav {
     scroll-behavior: smooth;
     scrollbar-width: 0;
 }
+
 .slides-wrapper::-webkit-scrollbar {
     display: none;
 }
@@ -207,6 +321,7 @@ nav {
     scroll-snap-type: none;
     /* scroll-behavior: auto; */
 }
+
 .slides-wrapper.dragging.slide-item {
     cursor: grab;
     user-select: none;
@@ -692,9 +807,11 @@ nav {
     nav {
         padding: 5px 10px;
     }
+
     .logo span {
         font-size: 1.5rem;
     }
+
     .logo img {
         width: 60px;
         height: 60px;
@@ -703,13 +820,15 @@ nav {
     .nav-actions {
         gap: 5px;
     }
+
     .nav-actions a svg {
         width: 25px;
         height: 25px;
     }
 
     .nav-link1 {
-        display: none; /* hide main nav links */
+        display: none;
+        /* hide main nav links */
     }
 
     .hamburger {
@@ -730,59 +849,61 @@ nav {
         padding: 15px 20px;
         border: 1px solid #333;
         /* border-radius: 10px; */
-        display: none; /* hidden initially */
+        display: none;
+        /* hidden initially */
         gap: 10px;
         z-index: 999;
         transition: all 0.3s ease;
     }
+
     .nav-link2 a {
-    position: relative;
-    color: #fff;
-    text-decoration: none;
-    padding: 12px 12px;
-    text-align: center;
-    font-size: 1.5rem;
-}
+        position: relative;
+        color: #fff;
+        text-decoration: none;
+        padding: 12px 12px;
+        text-align: center;
+        font-size: 1.5rem;
+    }
 
-.nav-link2 a::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 25%;
-    text-align: center;
-    height: 4px;
-    width: 0;
-    border-radius: 5px;
-    background-color: #fff;
-    transition: width 0.3s ease;
-}
+    .nav-link2 a::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 25%;
+        text-align: center;
+        height: 4px;
+        width: 0;
+        border-radius: 5px;
+        background-color: #fff;
+        transition: width 0.3s ease;
+    }
 
-.nav-link2 a:hover::after {
-    width: 50%;
-}
+    .nav-link2 a:hover::after {
+        width: 50%;
+    }
 
-/* Make HOME text white + bold */
-.nav-link2 .home {
-    color: #fff !important;
-    font-weight: bold;
-}
+    /* Make HOME text white + bold */
+    .nav-link2 .home {
+        color: #fff !important;
+        font-weight: bold;
+    }
 
-/* Fixed red underline ALWAYS visible */
-.nav-link2 .home::before {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 25%;
-    height: 4px;
-    width: 50%;
-    background-color: #ff0606;
-    border-radius: 3px;
-}
+    /* Fixed red underline ALWAYS visible */
+    .nav-link2 .home::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 25%;
+        height: 4px;
+        width: 50%;
+        background-color: #ff0606;
+        border-radius: 3px;
+    }
 
-/* Hover underline for Home should be white */
-.nav-link2 .home::after {
-    background-color: #fff !important;
-}
+    /* Hover underline for Home should be white */
+    .nav-link2 .home::after {
+        background-color: #fff !important;
+    }
 
     .nav-link2.active {
         display: flex;
@@ -792,9 +913,11 @@ nav {
     .hamburger.active span:nth-child(1) {
         transform: rotate(45deg) translate(5px, 5px);
     }
+
     .hamburger.active span:nth-child(2) {
         opacity: 0;
     }
+
     .hamburger.active span:nth-child(3) {
         transform: rotate(-45deg) translate(6px, -6px);
     }
@@ -802,6 +925,7 @@ nav {
     .m-text {
         grid-template-columns: 1fr 4fr 1fr;
     }
+
     .latest-releases-item {
         flex: 0 0 49.6%;
         height: 340px;
@@ -861,7 +985,8 @@ nav {
 
 @media (max-width: 1024px) and (min-width: 769px) {
     .nav-link1 {
-        display: none; /* hide main nav links */
+        display: none;
+        /* hide main nav links */
     }
 
     .hamburger {
@@ -925,12 +1050,15 @@ nav {
     :root {
         font-size: 15px;
     }
+
     nav {
         padding: 5px 10px;
     }
+
     .logo span {
         font-size: 1.1rem;
     }
+
     .logo img {
         width: 40px;
         height: 40px;
@@ -939,13 +1067,15 @@ nav {
     .nav-actions {
         gap: 5px;
     }
+
     .nav-actions a svg {
         width: 20px;
         height: 20px;
     }
 
     .nav-link1 {
-        display: none; /* hide main nav links */
+        display: none;
+        /* hide main nav links */
     }
 
     .hamburger {
@@ -966,58 +1096,60 @@ nav {
         padding: 15px 20px;
         border: 1px solid #333;
         /* border-radius: 10px; */
-        display: none; /* hidden initially */
+        display: none;
+        /* hidden initially */
         gap: 10px;
         z-index: 999;
         transition: all 0.3s ease;
     }
+
     .nav-link2 a {
-    position: relative;
-    color: #fff;
-    text-decoration: none;
-    padding: 12px 12px;
-    text-align: center;
-}
+        position: relative;
+        color: #fff;
+        text-decoration: none;
+        padding: 12px 12px;
+        text-align: center;
+    }
 
-.nav-link2 a::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 25%;
-    text-align: center;
-    height: 4px;
-    width: 0;
-    border-radius: 5px;
-    background-color: #fff;
-    transition: width 0.3s ease;
-}
+    .nav-link2 a::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 25%;
+        text-align: center;
+        height: 4px;
+        width: 0;
+        border-radius: 5px;
+        background-color: #fff;
+        transition: width 0.3s ease;
+    }
 
-.nav-link2 a:hover::after {
-    width: 50%;
-}
+    .nav-link2 a:hover::after {
+        width: 50%;
+    }
 
-/* Make HOME text white + bold */
-.nav-link2 .home {
-    color: #fff !important;
-    font-weight: bold;
-}
+    /* Make HOME text white + bold */
+    .nav-link2 .home {
+        color: #fff !important;
+        font-weight: bold;
+    }
 
-/* Fixed red underline ALWAYS visible */
-.nav-link2 .home::before {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 25%;
-    height: 4px;
-    width: 50%;
-    background-color: #ff0606;
-    border-radius: 3px;
-}
+    /* Fixed red underline ALWAYS visible */
+    .nav-link2 .home::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 25%;
+        height: 4px;
+        width: 50%;
+        background-color: #ff0606;
+        border-radius: 3px;
+    }
 
-/* Hover underline for Home should be white */
-.nav-link2 .home::after {
-    background-color: #fff !important;
-}
+    /* Hover underline for Home should be white */
+    .nav-link2 .home::after {
+        background-color: #fff !important;
+    }
 
     .nav-link2.active {
         display: flex;
@@ -1027,9 +1159,11 @@ nav {
     .hamburger.active span:nth-child(1) {
         transform: rotate(45deg) translate(5px, 5px);
     }
+
     .hamburger.active span:nth-child(2) {
         opacity: 0;
     }
+
     .hamburger.active span:nth-child(3) {
         transform: rotate(-45deg) translate(6px, -6px);
     }
@@ -1141,9 +1275,7 @@ nav {
         height: 300px;
     }
 
-    .slides-wrapper {
-       
-    }
+    .slides-wrapper {}
 
     .slide-item {
         min-width: 300px;

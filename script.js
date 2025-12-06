@@ -1,7 +1,5 @@
 const slidesWrapper = document.querySelector('.slides-wrapper');
 const slideItems = document.querySelectorAll('.slide-item');
-// const prevBtn = document.getElementById('prevBtn');
-// const nextBtn = document.getElementById('nextBtn');
 const arrowBnts = document.querySelectorAll('.slide-container button');
 const firstItemWidth = slidesWrapper.querySelector('.slide-item').offsetWidth + 20; //20 is the gap between items
 const slidesWrapperChildren = [...slidesWrapper.children];
