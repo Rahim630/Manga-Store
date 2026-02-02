@@ -1,0 +1,356 @@
+:root {
+  --fiery-orange: #f53d06;
+  --olive-beige: #dad2ab;
+  --warm-sand: #e9b877;
+  --deep-olive: #251f0e;
+  --charcoal-gray: #3b3c3e;
+  --white: #ffffff;
+  --black: #000000;
+  --Dark-Purple-Grape: #292031;
+  --Night-Purple: #1e1a2b;
+}
+html {
+  scroll-behavior: smooth;
+  scrollbar-color: var(--Night-Purple) #000;
+}
+body {
+  font-family: "Poppins", sans-serif;
+  /* background: var(--Night-Purple); */
+  background-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.6) 0%,
+      /* Top - semi-dark */ rgba(0, 0, 0, 0.7) 50%,
+      /* Middle - darker */ rgb(0, 0, 0) 100% /* Bottom - almost full black */
+    ),
+    url("../images/Demonic\ Master\ of\ Mount\ Kunlun.webp");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+
+  color: #fff;
+  margin: 0;
+  padding: 20px;
+}
+
+.manga-info-container {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.manga-header {
+  display: flex;
+  gap: 20px;
+}
+
+.manga-cover {
+  width: 250px;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.manga-details {
+  flex: 1;
+}
+
+.manga-title {
+  font-size: 32px;
+  font-weight: 600;
+}
+
+.manga-tags,
+.genres {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 10px 0;
+}
+
+.manga-tags span,
+.genres span {
+  background: #3a334d;
+  padding: 6px 12px;
+  border-radius: 12px;
+  font-size: 14px;
+  transition: transform 0.2s ease;
+}
+.manga-tags span:hover,
+.genres span:hover {
+  background: #5c4d7d;
+}
+
+.status.dropped {
+  background-color: #b61f1f;
+}
+
+.manga-description {
+  margin-top: 10px;
+  background: #2a2538;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.action-buttons {
+  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+}
+
+.action-buttons button {
+  padding: 10px 18px;
+  background: #3e3656;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.action-buttons button:hover {
+  background: #5c4d7d;
+}
+
+.sort-options {
+  display: flex;
+  margin-left: 1100px;
+  margin-top: -50px;
+  margin-bottom: 60px;
+}
+/* .sort-btn {
+    background: #3e3656;
+    border: none;
+    border-top-left-radius: 12px;
+    color: white;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+.sort-btn:hover {
+    background: #5c4d7d;
+} */
+.filter-btn {
+  background: #3e3656;
+  border: none;
+  border-radius: 12px;
+  color: white;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+.filter-btn:hover {
+  background: #5c4d7d;
+}
+
+/* .chapter-list {
+    margin-top: 40px;
+}
+
+.chapters-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 16px;
+    margin-top: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+} */
+
+/* 
+.chapter-card {
+    background: #2b2540;
+    padding: 10px;
+    border-radius: 12px;
+    text-align: center;
+} */
+
+.chapter-card img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 10px;
+}
+
+.chapter-list {
+  padding: 2rem;
+}
+
+.chapter-list h2 {
+  font-size: 1.8rem;
+  color: white;
+  margin-bottom: 1rem;
+}
+
+.chapters-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 24px;
+}
+
+.chapter-card {
+  background-color: #2d2544;
+  border-radius: 16px;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 60px;
+  width: 200px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease;
+}
+
+.chapter-card:hover {
+  transform: translateY(-5px);
+}
+
+.chapter-card img {
+  width: 80px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-left: -140px;
+}
+
+.chapter-card p {
+  margin: 10px 0 4px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: white;
+  margin-top: -55px;
+  margin-left: 100px;
+}
+
+.chapter-card span {
+  margin-top: -5px;
+  margin-left: 100px;
+  font-size: 0.9rem;
+  color: #ccc;
+}
+
+@media (max-width: 1200px) {
+  .manga-header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .manga-cover {
+    width: 200px;
+  }
+
+  .manga-title {
+    font-size: 28px;
+  }
+
+  .manga-tags,
+  .genres {
+    justify-content: center;
+  }
+
+  .action-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .action-buttons button {
+    width: 100%;
+    max-width: 250px;
+  }
+}
+
+/* 🌐 Mobile Responsive Styles */
+@media (max-width: 768px) {
+  body {
+    padding: 10px;
+  }
+  .manga-header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .manga-cover {
+    width: 180px;
+  }
+
+  .manga-title {
+    font-size: 24px;
+  }
+
+  .manga-tags,
+  .genres {
+    justify-content: center;
+  }
+
+  .action-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .action-buttons button {
+    width: 100%;
+    max-width: 250px;
+  }
+
+  .sort-options {
+    margin: 20px auto;
+    justify-content: center;
+    position: static;
+  }
+
+  .chapter-list {
+    padding: 1rem;
+  }
+
+  .chapters-grid {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 16px;
+  }
+
+  .chapter-card {
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    width: 90%;
+    height: auto;
+    padding: 10px;
+  }
+
+  .chapter-card img {
+    width: 60px;
+    height: 40px;
+    margin: 0;
+    margin-right: 10px;
+  }
+
+  .chapter-card p {
+    margin: 0;
+    font-size: 0.95rem;
+    margin-left: 0;
+  }
+
+  .chapter-card span {
+    font-size: 0.8rem;
+    margin-top: 2px;
+    margin-left: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .manga-title {
+    font-size: 20px;
+  }
+
+  .manga-tags span,
+  .genres span {
+    font-size: 12px;
+    padding: 5px 10px;
+  }
+
+  .filter-btn {
+    padding: 8px 14px;
+    font-size: 14px;
+  }
+}

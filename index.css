@@ -163,7 +163,8 @@ nav {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: start;   /* ✔ full screen center */
+    justify-content: start;
+    /* ✔ full screen center */
 }
 
 /* ------------ INPUT CONTAINER ------------ */
@@ -171,13 +172,17 @@ nav {
 .input-text {
     width: 55%;
     background-color: #b81313;
-    display: flex;
+    display: grid;
+    grid-template-areas: "input buttons"
+                         "results results";
+    grid-template-columns: 8fr 1fr;
+    /* display: flex;
     align-items: start;
-    justify-content: center;
+    justify-content: center; */
     position: relative;
     top: 55px;
     padding: 20px;
-    gap: 15px;
+    gap: 0 15px;
     border-radius: 12px;
     height: 50%;
 }
@@ -185,64 +190,70 @@ nav {
 /* ------------ INPUT + CLEAR BUTTON ------------ */
 
 .inputs {
+    grid-area: input;
     position: relative;
-    width: 70%;
+    width: 100%;
     display: flex;
     align-items: center;
 }
 
 .inputs input {
     width: 100%;
-    padding: 12px 15px;
+    padding: 18px 15px;
     border: none;
-    border-radius: 8px;
+    border-radius: 24px;
     font-size: 1rem;
     background: #fff;
     color: #000;
 }
 
 .inputs svg {
-    width: 25px;
-    height: 25px;
+    width: 30px;
+    height: 30px;
     position: absolute;
-    right: 10px;   /* ✔ move inside input */
+    right: 10px;
     cursor: pointer;
     padding: 5px;
     border-radius: 50%;
-    background-color: #000;
-    color: #fff;
+    /* background-color: #000; */
+    /* color: #000000; */
+    display: none;
 }
+
 
 /* ------------ TWO BUTTONS BELOW INPUT ------------ */
 
 .all-svg {
+    grid-area: buttons;
     display: flex;
     gap: 10px;
-    justify-content: center;    /* ✔ center the two icons */
-    align-items: center;        /* ✔ vertical center */
+    align-items: center;
     margin: 5px 0 0 0;
 }
 
 .all-svg svg {
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
     cursor: pointer;
     color: #fff;
     padding: 5px;
-    background-color: #000;
+    background-color: #ee0000;
     border-radius: 50%;
 }
+
 .all-svg .svg-2 svg {
-    background-color: #64d664;
+    background-color: #000000;
 }
 
 /* ------------ SEARCH-RUSELT BELOW INPUT ------------ */
 
 .search-results {
-    margin-top: 20px;
+    grid-area: results;
+    /* margin-top: 20px; */
     color: white;
     font-size: 1rem;
 }
+
 .result-item {
     padding: 10px;
     background: #111;
@@ -338,33 +349,149 @@ nav {
     height: 480px;
     border-radius: 20px;
     overflow: hidden;
+    position: relative;
 }
+
+
+/* black overlay to improve text contrast without changing markup */
+.slide-item::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    /* top:0; right:0; bottom:0; left:0; */
+    background: rgba(0, 0, 0, 0.15);
+    /* tweak opacity to taste */
+    z-index: 2;
+    pointer-events: none;
+    border-radius: inherit;
+}
+
 
 .slide-item img {
     width: 100%;
     height: 480px;
     object-fit: cover;
     border-radius: 20px;
+    display: block;
+    z-index: 1;
+}
+
+.slide-item p {
+    width: 35%;
+    position: absolute;
+    z-index: 99;
+    top: 5%;
+    left: 3%;
+    padding: 5px 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #fff;
+    font-weight: bold;
+    font-size: 0.9rem;
+    background-color: rgba(255, 255, 255, 0.1);
+    /* semi-transparent */
+    backdrop-filter: blur(10px);
+    /* blur background behind it */
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    /* subtle border */
+    border-radius: 15px;
+}
+
+.status-light {
+    display: inline-block;
+    /* makes the span render as a block inside text */
+    width: 12px;
+    /* visible size */
+    height: 12px;
+    /* visible size */
+    border-radius: 50%;
+    /* makes it circular */
+    margin-right: 8px;
+    /* space between light and text */
+    vertical-align: middle;
+    /* align with text */
+    animation: blink 2s infinite;
+}
+
+@keyframes blink {
+
+    0%,
+    50%,
+    100% {
+        opacity: 1;
+    }
+
+    25%,
+    75% {
+        opacity: 0;
+    }
+}
+
+
+
+.slide-item h2 {
+    max-width: 400px;
+    width: 80%;
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    overflow-wrap: break-word;
+    color: #fff;
+    text-shadow:
+        -1px -1px 0 black,
+        1px -1px 0 black,
+        -1px 1px 0 black,
+        1px 1px 0 black;
+    font-size: 2rem;
+    z-index: 99;
+    line-height: 1.1;
+}
+
+.genre-list {
+    max-width: 400px;
+    width: 80%;
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    z-index: 99;
+}
+
+.genre-list span {
+    background-color: rgba(230, 9, 9, 0.5);
+    color: #fff;
+    padding: 5px 8px;
+    border-radius: 12px;
+    font-size: 0.9rem;
+    border: 2px solid #da1313;
 }
 
 /* Navigation buttons */
 .slider-btn {
     position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(0, 0, 0, 0.5);
-    color: #fff;
+    top: 45%;
+    /* transform: translateY(-50%); */
+    background: none;
+    /* color: #fff; */
     border: none;
     font-size: 2rem;
     cursor: pointer;
-    padding: 10px 15px;
+    /* padding: 10px 15px; */
     z-index: 10;
-    border-radius: 50%;
-    transition: background 0.3s;
+    /* border-radius: 50%; */
+    /* transition: background 0.3s; */
 }
 
 .slider-btn:hover {
-    background: rgba(255, 255, 255, 0.2);
+    /* background: rgba(255, 255, 255, 0.2); */
 }
 
 #prevBtn {
@@ -375,16 +502,17 @@ nav {
     right: 10px;
 }
 
-/* Popular Today Section */
+/* ------------ POPULAR TODAY SECTION ------------ */
 .popular-today {
     margin: 15px 0;
     padding: 0 5px;
+    height: auto;
 }
 
 .wrp-group {
     display: flex;
     width: fit-content;
-    animation: spin 10s linear infinite;
+    /* animation: spin 10s linear infinite; */
     gap: 5px;
 }
 
@@ -394,7 +522,7 @@ nav {
 
 .popular-today h2 {
     font-size: 1.45rem;
-    margin-bottom: 15px;
+    margin-bottom: 5px;
     padding: 0 5px;
 }
 
@@ -404,15 +532,18 @@ nav {
     overflow: hidden;
     max-width: 1540px;
     margin: 0 auto;
-    /* height: 460px; */
+    height: 460px;
     height: auto;
     background-color: #000;
 }
 
 .popular-today-wrapper {
     display: flex;
-    transition: transform 0.5s ease-in-out;
+    align-items: center;
+    /* transition: transform 0.5s ease-in-out; */
     width: fit-content;
+    background-color: #000000;
+    height: 55vh;
     flex-shrink: 0;
     gap: 5px;
 }
@@ -422,6 +553,7 @@ nav {
 }
 
 .popular-today-item {
+    position: relative;
     min-width: 300px;
     flex-shrink: 0;
     flex: 0 0 300px;
@@ -429,12 +561,86 @@ nav {
     border-radius: 20px;
     overflow: hidden;
     padding: 0 5px;
+    transition: transform 0.3s ease-in-out;
+}
+.popular-today-item h2 {
+   max-width: 400px;
+    width: 80%;
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+
+    transform: translate(-50%, 0) scale(1);
+    transition: transform 0.3s ease-in-out;
+
+    text-align: center;
+    overflow-wrap: break-word;
+    color: #fff;
+    text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
+    font-size: 1.3rem;
+    z-index: 999;
+    line-height: 1.1;
+}
+
+.popular-today-item::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 45%;
+
+    background: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.75),
+        rgba(0, 0, 0, 0.35),
+        transparent
+    );
 }
 
 .popular-today-item:hover {
-    transform: scale(1.04);
-    transition: transform 0.3s ease-in-out;
+    transform: rotateX(25deg);
 }
+.popular-today-item:hover h2 {
+    transform: translate(-50%, -100%) scale(1.1);
+}
+
+
+.popular-today-item:hover::after {
+    content: '';
+    height: 55%;
+    background: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.85),
+        rgba(0, 0, 0, 0.45),
+        transparent
+    );
+}
+
+.flag-rating {
+    position: absolute;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 30px;
+    gap: 120px;
+    width: 100%;
+    bottom: 25px;
+    z-index: 999;
+    
+    opacity: 0;
+    transform: translateY(20px); 
+    transition: all 0.4s ease-in-out; 
+}
+.popular-today-item:hover .flag-rating {
+    opacity: 1;
+    transform: translateY(0);
+}
+.popular-today-item .flag-rating img {
+    width: 30px;
+    height: 30px;
+}
+
 
 @keyframes spin {
     from {
@@ -508,7 +714,7 @@ nav {
 .text {
     grid-area: text;
     display: flex;
-    gap: 5px;
+    gap: 0.5rem;
     align-items: center;
     justify-self: start;
     font-size: 1.35rem;
@@ -517,11 +723,45 @@ nav {
 .box-1 {
     display: flex;
     align-items: center;
-    border: 2px solid #da1313;
+    /* border: 2px solid #da1313; */
+    position: relative;
     border-radius: 12px;
     padding: 0 12px;
     gap: 2px;
     margin: 0 0 0 5px;
+    background-color: #000;
+}
+
+@property --angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+.box-1::after, .box-1::before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-image: conic-gradient(from var(--angle), #b81313, #fff, #000, #b81313);
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    padding: 2px;
+    border-radius: 12px;
+    z-index: -1;
+    animation: spin-angle 1.5s linear infinite;
+}
+.box-1::before {
+    filter: blur(1.5rem);
+    opacity: 0.5;
+}
+@keyframes spin-angle {
+    from {
+        --angle: 0deg;
+    }
+    to {
+        --angle: 360deg;
+    }
 }
 
 .box-1 h2 {
@@ -534,13 +774,27 @@ nav {
     width: 25px;
     height: 25px;
     color: #b81313;
+    animation: blink 2s infinite;
 }
+@keyframes blink {
+    0%,
+    50%,
+    100% {
+        opacity: 1;
+    }
+
+    25%,
+    75% {
+        opacity: 0;
+    }
+}    
 
 .box-2 {
     display: flex;
     align-items: center;
     border-radius: 12px;
-    padding: 0 12px;
+    outline: 2px solid #6e7073;
+    padding: 0 10px;
     gap: 2px;
     color: #6e7073;
     padding: 0 15px;
@@ -549,7 +803,9 @@ nav {
 
 .box-2:hover {
     color: #fff;
-    border: 2px solid #6e7073;
+    border: 0;
+    outline: 2px solid #b81313;
+    outline-offset: 3px;
     cursor: pointer;
 }
 
@@ -588,6 +844,12 @@ nav {
     border-radius: 20px;
     overflow: hidden;
     display: flex;
+    position: relative;
+}
+
+.latest-releases-item:hover {
+    outline: 4px solid #b8131369;
+    transition: transform 0.3s ease-in-out;
 }
 
 .img-card {
@@ -601,11 +863,19 @@ nav {
     height: 100%;
     object-fit: cover;
 }
-
-.latest-releases-item:hover {
-    transform: scale(1.02);
-    transition: transform 0.3s ease-in-out;
+.flag {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 30px;
+    height: 20px;
+    border: 2px solid #fff;
+    border-radius: 4px;
+    object-fit: cover;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    z-index: 999;
 }
+
 
 .manga-data {
     padding: 10px;
@@ -627,7 +897,7 @@ nav {
 }
 
 .chapter {
-    border: 2px solid #000;
+    border: 2px solid #433d3d;
     padding: 10px 10px;
     margin: 5px 0;
     border-radius: 8px;
@@ -636,6 +906,13 @@ nav {
     display: flex;
     justify-content: space-between;
     font-size: 1rem;
+}
+.chapter-data .chapter:hover {
+    background-color: #b81313;
+    border-color: #b81313;
+    cursor: pointer;
+    color: #000;
+    transition: all 0.3s ease-in-out;
 }
 
 /* Most Popular Section */
@@ -657,6 +934,18 @@ nav {
     height: 30px;
     vertical-align: middle;
     color: #dc2626;
+    animation: burning 2s infinite;
+}
+@keyframes burning {
+    0%,
+    50%,
+    100% {
+        opacity: 1;
+    }
+    25%,
+    75% {
+        opacity: 0;
+    }
 }
 
 .Most-Popular-head h2 {
@@ -679,17 +968,43 @@ nav {
     overflow: hidden;
     cursor: pointer;
     flex: 0 0 465px;
-    background-color: rgb(10 10 10);
+    /* background-color: rgb(10 10 10); */
+    background-color: #000000;
     display: grid;
-    grid-template-areas:
-        "img rank title";
+    grid-template-areas: "img rank title";
     grid-template-columns: 1fr auto 2fr;
     gap: 10px;
+    transition: transform 0.3s ease-in-out;
 }
 
+/* thin white streak */
+.Most-Popular-item::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -40%;
+    width: 30%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.075),
+        transparent
+    );
+    transform: translateX(0);
+    transition: transform 1s ease;
+    pointer-events: none;
+}
+
+/* hover effects */
 .Most-Popular-item:hover {
     transform: scale(1.03);
-    transition: transform 0.3s ease-in-out;
+     box-shadow: 0 0 30px rgba(255, 255, 255, 0.15);
+}
+
+/* move streak right → left */
+.Most-Popular-item:hover::after {
+    transform: translateX(500%);
 }
 
 .Most-Popular-item img {
@@ -698,7 +1013,15 @@ nav {
     height: 180px;
     object-fit: cover;
     border-radius: 25px;
-    border: 5px solid #c41818;
+    transition:
+        transform 0.3s ease-in-out,
+        box-shadow 0.3s ease-in-out;
+    pointer-events: none; /* IMPORTANT */
+}
+
+/* image reacts ONLY when card is hovered */
+.Most-Popular-item:hover img {
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.274);
 }
 
 .rank {
@@ -724,7 +1047,7 @@ nav {
 }
 
 .titel {
-    height: 60px;
+    height: auto;
 }
 
 .titel h3 {
@@ -927,7 +1250,7 @@ nav {
     }
 
     .latest-releases-item {
-        flex: 0 0 49.6%;
+        flex: 0 0 47.5vw;
         height: 340px;
     }
 
@@ -1235,7 +1558,7 @@ nav {
     }
 
     .titel h3 {
-        font-size: 1.15px;
+        font-size: 1.2rem;
     }
 }
 
@@ -1250,6 +1573,12 @@ nav {
 
     .nav-categories a {
         display: none;
+    }
+
+    .slide-item {
+        min-width: 80vw;
+        height: 400px;
+        scroll-snap-align: center;
     }
 
 }

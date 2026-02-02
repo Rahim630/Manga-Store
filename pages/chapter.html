@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Chapter</title>
+  <link rel="stylesheet" href="../index.css">
+  <style>
+    .chapter-reader { padding: 2rem; font-family: sans-serif; }
+    .chapter-reader h1 { margin-bottom: 1rem; }
+    .back { margin-bottom: 1rem; display:inline-block }
+  </style>
+</head>
+<body>
+  <div class="chapter-reader">
+    <a class="back" href="../index.html">← Back</a>
+    <h1 id="chapter-title">Chapter</h1>
+    <p id="chapter-meta"></p>
+    <div id="chapter-content">This is a placeholder for the chapter viewer. You can replace this with an image viewer or reader component.</div>
+  </div>
+
+  <script src="../item.js"></script>
+  <script>
+    (function(){
+      const params = new URLSearchParams(window.location.search);
+      const mangaId = params.get('mangaId');
+      const chapter = params.get('chapter');
+
+      let manga = null;
+      if (typeof MANGA_DATA !== 'undefined' && mangaId !== null) {
+        const idx = parseInt(mangaId, 10);
+        if (!Number.isNaN(idx) && MANGA_DATA[idx]) manga = MANGA_DATA[idx];
+      }
+
+      const titleEl = document.getElementById('chapter-title');
+      const metaEl = document.getElementById('chapter-meta');
+      const contentEl = document.getElementById('chapter-content');
+
+      if (manga) {
+        titleEl.textContent = `${manga.title} - Chapter ${chapter || '1'}`;
+        metaEl.textContent = `Author: ${manga.author || 'Unknown'} • Status: ${manga.status || 'Unknown'}`;
+        // demo content: show cover image then placeholder text
+        contentEl.innerHTML = `<img src="../${manga.Image}" alt="${manga.title} cover" style="max-width:280px;display:block;margin-bottom:1rem">` +
+          `<p>Content placeholder for ${manga.title} chapter ${chapter || '1'}. Replace with your viewer (images or pages).</p>`;
+      } else {
+        titleEl.textContent = `Chapter ${chapter || '1'}`;
+        metaEl.textContent = '';
+      }
+    })();
+  </script>
+</body>
+</html>

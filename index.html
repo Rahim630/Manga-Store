@@ -47,7 +47,7 @@
                                 <g id="SVGRepo_iconCarrier">
                                     <path fill-rule="evenodd" clip-rule="evenodd"
                                         d="M5.29289 5.29289C5.68342 4.90237 6.31658 4.90237 6.70711 5.29289L12 10.5858L17.2929 5.29289C17.6834 4.90237 18.3166 4.90237 18.7071 5.29289C19.0976 5.68342 19.0976 6.31658 18.7071 6.70711L13.4142 12L18.7071 17.2929C19.0976 17.6834 19.0976 18.3166 18.7071 18.7071C18.3166 19.0976 17.6834 19.0976 17.2929 18.7071L12 13.4142L6.70711 18.7071C6.31658 19.0976 5.68342 19.0976 5.29289 18.7071C4.90237 18.3166 4.90237 17.6834 5.29289 17.2929L10.5858 12L5.29289 6.70711C4.90237 6.31658 4.90237 5.68342 5.29289 5.29289Z"
-                                        fill="#ffffff"></path>
+                                        fill="#000"></path>
                                 </g>
                             </svg>
                         </div>
@@ -150,13 +150,25 @@
             <!-- <h1>Welcome to Manga Store</h1> -->
 
             <!-- <div class="slide-container"> -->
-            <button class="slider-btn" id="prevBtn">&#10094;</button>
+            <button class="slider-btn" id="prevBtn"> <svg width="50" height="50" viewBox="0 0 50 50"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="25" cy="25" r="25" fill="rgba(0, 0, 0, 0.5)" />
+                    <polyline points="30,15 20,25 30,35" fill="none" stroke="#ffffff9c" stroke-width="5"
+                        stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+            </button>
 
             <div class="slides-wrapper" id="slidesWrapper">
                 <!--dynamic-->
             </div>
 
-            <button class="slider-btn" id="nextBtn">&#10095;</button>
+            <button class="slider-btn" id="nextBtn"> <svg width="50" height="50" viewBox="0 0 50 50"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="25" cy="25" r="25" fill="rgba(0, 0, 0, 0.5)" />
+                    <polyline points="20,15 30,25 20,35" fill="none" stroke="#ffffff9c" stroke-width="5"
+                        stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+            </button>
             <!-- </div> -->
         </section>
 
@@ -168,7 +180,7 @@
                 <div class="wrp-group" id="popularTodayWrapper">
 
                     <!--dynamic-->
-                    
+
                 </div>
                 <!-- <button class="sli-btn" id="nextPopularBtn">&#10095;</button> -->
             </div>
@@ -199,89 +211,8 @@
                 <a href="manga.html">See All</a>
             </div>
 
-            <div class="latest-releases-container">
-                <div class="latest-releases-item">
-                    <div class="img-card">
-                        <img src="/image/Reborn as a Scholar.webp" alt="">
-                    </div>
-                    <div class="manga-data">
-                        <h3>Reborn as a Scholar</h3>
-                        <div class="chapter-data">
-                            <div class="chapter">
-                                <span>Chapter 50</span>
-                                <span>2 hours ago</span>
-                            </div>
-                            <div class="chapter">
-                                <span>Chapter 51</span>
-                                <span>2 hours ago</span>
-                            </div>
-                            <div class="chapter">
-                                <span>Chapter 52</span>
-                                <span>2 hours ago</span>
-                            </div>
-                            <div class="chapter">
-                                <span>Chapter 53</span>
-                                <span>2 hours ago</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="latest-releases-item">
-                    <div class="img-card">
-                        <img src="/image/Return of the Mad Demon.webp" alt="">
-                    </div>
-                    <div class="manga-data">
-                        <h3>Return of the Mad Demon</h3>
-                        <div class="chapter-data">
-                            <div class="chapter">
-                                <span>Chapter 50</span>
-                                <span>2 hours ago</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="latest-releases-item">
-                    <div class="img-card">
-                        <img src="/image/The Legend of the Northern Blade.webp" alt="">
-                    </div>
-                    <div class="manga-data">
-                        <h3>The Legend of the Northern Blade</h3>
-                        <div class="chapter-data">
-                            <div class="chapter">
-                                <span>Chapter 50</span>
-                                <span>2 hours ago</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="latest-releases-item">
-                    <div class="img-card">
-                        <img src="/image/The Undefeatable Swordsman.webp" alt="">
-                    </div>
-                    <div class="manga-data">
-                        <h3>The Undefeatable Swordsman</h3>
-                        <div class="chapter-data">
-                            <div class="chapter">
-                                <span>Chapter 50</span>
-                                <span>2 hours ago</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="latest-releases-item">
-                    <div class="img-card">
-                        <img src="/image/Volcanic Age.webp" alt="">
-                    </div>
-                    <div class="manga-data">
-                        <h3>Volcanic Age</h3>
-                        <div class="chapter-data">
-                            <div class="chapter">
-                                <span>Chapter 50</span>
-                                <span>2 hours ago</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="latest-releases-container" id="latestReleasesContainer">
+                <!--dynamic-->
             </div>
         </section>
 
@@ -295,152 +226,8 @@
                 </svg>
                 <h2>Most Popular</h2>
             </div>
-            <div class="Most-Popular-container">
-                <div class="Most-Popular-item">
-                    <img src="/image/Volcanic Age.webp" alt="">
-                    <div class="rank">
-                        <h2>1</h2>
-                    </div>
-                    <div class="d-t">
-                        <div class="titel">
-                            <h3>Volcanic Age</h3>
-                        </div>
-                        <div class="genre">
-                            <span>Action</span>
-                            <span>Adventure</span>
-                            <span>Martial Arts</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="Most-Popular-item">
-                    <img src="/image/The Undefeatable Swordsman.webp" alt="">
-                    <div class="rank">
-                        <h2>2</h2>
-                    </div>
-                    <div class="d-t">
-                        <div class="titel">
-                            <h3>The Undefeatable Swordsman</h3>
-                        </div>
-                        <div class="genre">
-                            <span>Action</span>
-                            <span>Adventure</span>
-                            <span>Martial Arts</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="Most-Popular-item">
-                    <img src="/image/The Legend of the Northern Blade.webp" alt="">
-                    <div class="rank">
-                        <h2>3</h2>
-                    </div>
-                    <div class="d-t">
-                        <div class="titel">
-                            <h3>The Legend of the Northern Blade</h3>
-                        </div>
-                        <div class="genre">
-                            <span>Action</span>
-                            <span>Adventure</span>
-                            <span>Martial Arts</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="Most-Popular-item">
-                    <img src="/image/Return of the Mad Demon.webp" alt="">
-                    <div class="rank">
-                        <h2>4</h2>
-                    </div>
-                    <div class="d-t">
-                        <div class="titel">
-                            <h3>Return of the Mad Demon</h3>
-                        </div>
-                        <div class="genre">
-                            <span>Action</span>
-                            <span>Adventure</span>
-                            <span>Martial Arts</span>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="Most-Popular-item">
-                    <img src="/image/Reborn as a Scholar.webp" alt="">
-                    <div class="rank">
-                        <h2>5</h2>
-                    </div>
-                    <div class="d-t">
-                        <div class="titel">
-                            <h3>Reborn as a Scholar</h3>
-                        </div>
-                        <div class="genre">
-                            <span>Action</span>
-                            <span>Adventure</span>
-                            <span>Martial Arts</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="Most-Popular-item">
-                    <img src="/image/Heavenly Inquisition Sword.webp" alt="">
-                    <div class="rank">
-                        <h2>6</h2>
-                    </div>
-                    <div class="d-t">
-                        <div class="titel">
-                            <h3>Heavenly Inquisition Sword</h3>
-                        </div>
-                        <div class="genre">
-                            <span>Action</span>
-                            <span>Adventure</span>
-                            <span>Martial Arts</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="Most-Popular-item">
-                    <img src="/image/Murim Login.webp" alt="">
-                    <div class="rank">
-                        <h2>7</h2>
-                    </div>
-                    <div class="d-t">
-                        <div class="titel">
-                            <h3>Murim Login</h3>
-                        </div>
-                        <div class="genre">
-                            <span>Action</span>
-                            <span>Adventure</span>
-                            <span>Martial Arts</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="Most-Popular-item">
-                    <img src="/image/Murim RPG Simulation.webp" alt="">
-                    <div class="rank">
-                        <h2>8</h2>
-                    </div>
-                    <div class="d-t">
-                        <div class="titel">
-                            <h3>Murim RPG Simulation</h3>
-                        </div>
-                        <div class="genre">
-                            <span>Action</span>
-                            <span>Adventure</span>
-                            <span>Martial Arts</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="Most-Popular-item">
-                    <img src="/image/Nano Machine.webp" alt="">
-                    <div class="rank">
-                        <h2>9</h2>
-                    </div>
-                    <div class="d-t">
-                        <div class="titel">
-                            <h3>Nano Machine</h3>
-                        </div>
-                        <div class="genre">
-                            <span>Action</span>
-                            <span>Adventure</span>
-                            <span>Martial Arts</span>
-                        </div>
-                    </div>
-                </div>
+            <div class="Most-Popular-container" id="mostPopularContainer">
+                <!------dynamic------->
             </div>
         </section>
 
